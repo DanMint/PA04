@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="text-center my-4">Transactions for <%= user.username %></h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <a href="/transact" class="btn btn-primary mb-3">View Full Transaction List</a>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Total Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% results.forEach(item => { %>
+              <tr>
+                <td><%= item._id %></td>
+                <td>$ <%= item.totalAmount.toFixed(2) %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
